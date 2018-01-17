@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Troisieme serie</title>
+  <style media="screen">
+    #rect {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      position: absolute;
+      left: 100px;
+      top: 100px;
+    }
+
+    body {
+      margin: 0 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">1er exo</a> <a href="second.html">
+                    2eme exo </a> <a href="third.html">
+                    3eme exo </a> <a href="fourth.html">
+                      4eme exo </a> <b> 5eme exo </b>
+  </header>
+  <div class="space">
+    <h1>Press any Direction</h1>
+  </div>
+  <div class="container">
+    <div id="rect"></div>
+  </div>
+
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <!-- jQuery starts_______________________________________________________ -->
+  <script>
+    $(document).ready(function() {
+      $(document).keydown(function(e) {
+        switch (e.which) {
+          case 39: //right arrow key
+            $("#rect").animate({
+              left: "+=10"
+            }, 0, function() {
+              if ($("#rect").position().left >=
+                $('body').width() - $('#rect').width()) {
+                $("#rect").css("left", "0");
+              }
+            });
+            break;
+          case 38: //up arrow key
+            $("#rect").animate({
+              top: "-=10"
+            }, 0, function() {
+              if ($("#rect").css("top") < "0") {
+                $("#rect").css("top", $('body').height() - $('#rect').height());
+              }
+            });
+            break;
+          case 37: //left arrow key
+            $("#rect").animate({
+              left: "-=10"
+            }, 0, function() {
+              if ($("#rect").css("left") < "0") {
+                $("#rect").css("left", $('body').width() - $('#rect').width());
+              }
+            });
+            break;
+          case 40: //bottom arrow key
+            $("#rect").animate({
+              top: "+=10"
+            }, 0, function() {
+              if ($("#rect").position().top >=
+                $('body').height() - $('#rect').height()) {
+                $("#rect").css("top", "0");
+              }
+            });
+            break;
+        }
+      });
+
+    });
+
+  </script>
+
+</body>
+
+</html>

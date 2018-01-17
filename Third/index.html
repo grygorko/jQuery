@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Troisieme serie</title>
+</head>
+
+<body>
+  <header>
+    <b>1er exo</b> <a href="second.html">2eme exo</a> <a href="third.html">
+                    3eme exo </a> <a href="fourth.html"> 4eme exo </a> <a href="fifth.html">
+                      5eme exo </a>
+  </header>
+  <input type="button" value="Count" id="countButton" />
+
+  <p>The button was pressed <span id="displayCount">0</span> times.</p>
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <!-- jQuery starts_________________________________________________________ -->
+  <script>
+    var count = 0;
+    $("#countButton").click(function() {
+      count++;
+      $("#displayCount").html(count);
+    });
+
+  </script>
+  <!-- JavaScript starts_________________________________________________________ -->
+  <!-- <script type="text/javascript">
+    var count = 0;
+    var button = document.getElementById("countButton");
+    var display = document.getElementById("displayCount");
+
+    button.onclick = function() {
+      count++;
+      display.innerHTML = count;
+    }
+
+  </script> -->
+</body>
+
+</html>

@@ -40,7 +40,7 @@
 		</ol>
 	</div>
 
-	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			/* agrandir la police de caractères (120%) */
@@ -74,10 +74,10 @@
 			/* remplacer le logo par une autre image au survol */
 
 
-			$("#instructions li:nth-child(5)").mouseenter(function() {
+			$("ol li:eq(4)").mouseenter(function() {
 				$("img").attr('src', "./koala.jpg");
 			});
-			$("#instructions li:nth-child(5)").mouseout(function() {
+			$("ol li:eq(4)").mouseout(function() {
 				$("img").attr('src', "./jquery-logo.png");
 			});
 

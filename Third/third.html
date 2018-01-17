@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Troisieme serie</title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">1er exo</a> <a href="second.html">
+                    2eme exo </a> <b>3eme exo</b> <a href="fourth.html"> 4eme exo </a> <a href="fifth.html">
+                      5eme exo </a>
+  </header>
+  <h1>Guess number from 0 to 100</h1>
+  <input type="number" id="userGuess" name="Enter the number" value="">
+  <input type="button" id="enterButton" name="enterB" value="Guess">
+  <input type="button" id="reset" name="reset" value="Reset">
+  <div id="answer"></div>
+  <div id="guesses"></div>
+  <!-- jQuery starts________________________________________________________-->
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <script>
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNumber);
+    var guesses = 0;
+
+    $("#enterButton").click(function() {
+      var userGuess = $("#userGuess").val();
+      if (userGuess == randomNumber) {
+        $("#answer").text("That is correct :) Please press reload to play again.");
+        $('#userGuess').hide();
+        $('#enterButton').hide();
+        guesses++;
+        $("#guesses").html("You made " + guesses + " guess/es");
+      } else if (userGuess > randomNumber) {
+        guesses++;
+        $("#answer").text("number is tooooo high");
+      } else if (userGuess < randomNumber) {
+        guesses++;
+        $("#answer").text("number is tooooo low");
+      } else {
+        $("#answer").text("you r silly, I said from 0 to 100");
+      }
+    });
+
+    $("#reset").click(function() {
+      location.reload();
+    });
+
+  </script>
+
+
+
+
+</body>
+
+</html>

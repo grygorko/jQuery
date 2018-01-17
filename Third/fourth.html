@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Troisieme serie</title>
+  <style media="screen">
+    #rect {
+      width: 200px;
+      height: 10px;
+      background-color: blue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">1er exo</a> <a href="second.html">
+                    2eme exo </a> <a href="third.html">
+                    3eme exo </a> <b> 4eme exo </b> <a href="fifth.html">
+                      5eme exo </a>
+  </header>
+  <input type="button" value="increase" id="increase" />
+  <input type="button" value="green" id="green" />
+  <input type="button" value="restore" id="restore" />
+  <input type="button" value="hide" id="hide" />
+  <input type="button" value="show" id="show" />
+  <div class="space">
+    <h1>see the result</h1>
+  </div>
+  <div id="rect"></div>
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <!-- jQuery starts_______________________________________________________ -->
+  <script>
+    $("#increase").click(function() {
+      var h = $("#rect").height();
+      console.log(h);
+
+      $("#rect").css("height", h = h + 10);
+      if (h > 110) {
+        $("#rect").css("height", 10);
+      }
+    });
+
+    $("#green").click(function() {
+      $("#rect").css("background-color", "green");
+    });
+    $("#restore").click(function() {
+      $("#rect").css("background-color", "");
+    });
+    $("#hide").click(function() {
+      $("#rect").hide();
+    });
+    $("#show").click(function() {
+      $("#rect").show();
+    });
+
+  </script>
+
+</body>
+
+</html>

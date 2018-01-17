@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Troisieme serie</title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">1er exo</a> <b>2eme exo</b> <a href="third.html">
+                    3eme exo </a> <a href="fourth.html"> 4eme exo </a> <a href="fifth.html">
+                      5eme exo </a>
+  </header>
+  <input type="button" value="Count +" id="countButtonPlus" />
+  <input type="button" value="Count −" id="countButtonMinus" />
+
+  <p>The button was pressed <span id="displayCount">0</span> times.</p>
+
+  <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+  <!-- jQuery starts_________________________________________________________ -->
+  <script>
+    var count = 0;
+    $("#countButtonPlus").click(function() {
+      count++;
+      $("#displayCount").html(count);
+    });
+    $("#countButtonMinus").click(function() {
+      count--;
+      $("#displayCount").html(count);
+    });
+
+  </script>
+  <!-- JavaScript starts_________________________________________________________ -->
+  <!-- <script type="text/javascript">
+    var count = 0;
+    var buttonP = document.getElementById("countButtonPlus");
+    var buttonM = document.getElementById("countButtonMinus")
+    var display = document.getElementById("displayCount");
+
+    buttonP.onclick = function() {
+      count++;
+      display.innerHTML = count;
+    }
+    buttonM.onclick = function() {
+      count--;
+      display.innerHTML = count;
+    }
+
+  </script> -->
+</body>
+
+</html>
